@@ -118,6 +118,8 @@ public class NdkBuildStep extends ShellStep {
     builder.add(
         "APP_PROJECT_PATH=" + absolutifier.apply(buildArtifactsDirectory) + File.separatorChar,
         "APP_BUILD_SCRIPT=" + absolutifier.apply(makefile),
+        "APP_PLATFORM=" + absolutifier.apply(makefile),
+        "NDK_PROJECT_PATH=" + absolutifier.apply(relativePathToProject) + File.separatorChar,
         "NDK_OUT=" + absolutifier.apply(buildArtifactsDirectory) + File.separatorChar,
         "NDK_LIBS_OUT=" + filesystem.resolve(binDirectory),
         "BUCK_PROJECT_DIR=" + relativePathToProject);
